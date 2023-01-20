@@ -1,46 +1,59 @@
 <CameraScreen>
     GridLayout:
         cols:1
+        spacing : 10
         Camera:
             id : camera
             resolution: (1280,720)
             play : False
-
+            size_hint_y : 0.8
         Button:
             id : start_stop
             text: "start camera"
             on_press : root.start() if root.ids.camera.play == False else root.stop()
-            size_hint_y : 0.2
+            size_hint_y : 0.1
+            background_normal : "images/normal.png"
+            background_down : "images/down.png"
         Button:
             text: "capture"
-            size_hint_y : 0.2
+            size_hint_y : 0.1
             on_press : root.capture()
+            background_normal : "images/normal.png"
+            background_down : "images/down.png"
 
 <ImageScreen>:
     GridLayout:
         cols:1
+        spacing : 10
         Image:
             id : img
-            size_hint_y : 0.8
+            size_hint_y : 0.7
             source: ''
         Button:
             text : "create shareable link"
-            size_hint_y : 0.2
+            size_hint_y : 0.1
             on_press : root.create_link()
+            background_normal : "images/normal.png"
+            background_down : "images/down.png"
         Label:
             id : link_lable
             text : ""
             size_hint_y : 0.1
         GridLayout:
             cols: 2
+            size_hint_y : 0.1
             Button:
-                size_hint_y : 0.2
+
                 text : "Copy link"
                 on_press : root.copy_link()
+                background_normal : "images/normal.png"
+                background_down : "images/down.png"
             Button:
-                size_hint_y : 0.2
+
                 text : "Open link"
                 on_press : root.open_link()
+                background_normal : "images/normal.png"
+                background_down : "images/down.png"
 
 
 <RootWidget>:
