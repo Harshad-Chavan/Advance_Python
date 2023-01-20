@@ -14,8 +14,39 @@
         Button:
             text: "capture"
             size_hint_y : 0.2
+            on_press : root.capture()
+
+<ImageScreen>:
+    GridLayout:
+        cols:1
+        Image:
+            id : img
+            size_hint_y : 0.8
+            source: ''
+        Button:
+            text : "create shareable link"
+            size_hint_y : 0.2
+            on_press : root.create_link()
+        Label:
+            id : link_lable
+            text : ""
+            size_hint_y : 0.1
+        GridLayout:
+            cols: 2
+            Button:
+                size_hint_y : 0.2
+                text : "Copy link"
+                on_press : root.copy_link()
+            Button:
+                size_hint_y : 0.2
+                text : "Open link"
+                on_press : root.open_link()
+
 
 <RootWidget>:
     CameraScreen:
         id : camera_screen
         name : 'camera_screen'
+    ImageScreen:
+        id : image_screen
+        name : 'image_screen'
